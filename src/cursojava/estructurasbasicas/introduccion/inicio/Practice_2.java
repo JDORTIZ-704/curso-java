@@ -1,0 +1,12 @@
+package cursojava.estructurasbasicas.introduccion.inicio;
+
+public class Practice_2 {
+
+    public static void main (String[] args) {
+
+        final double CONVERSION_EURO = 1.2;
+
+        System.out.println("Euro: " + CONVERSION_EURO);
+
+    }
+}
