@@ -16,13 +16,9 @@ public class Exercise_3 {
             matriz[i] = (int) (Math.random()*100)+1;
         }
 
-
         for (int imprime:matriz) {
             System.out.println(imprime + " ");
         }
-
-
-
 
     }
 }
