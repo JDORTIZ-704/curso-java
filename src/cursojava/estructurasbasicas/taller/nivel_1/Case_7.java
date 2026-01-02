@@ -1,35 +1,37 @@
 package cursojava.estructurasbasicas.taller.nivel_1;
 
+import javax.xml.stream.events.EntityReference;
 import java.util.Scanner;
 
-public class Case_6 {
+public class Case_7 {
+
     public static void main(String[] args) {
 
-/*        3️⃣ Mostrar los primeros N múltiplos de 3
-        Entrada: 4
-        Salida: 3 6 9 12
+/*        4️⃣ Mostrar los primeros N números impares
+        Entrada: 6
+        Salida: 1 3 5 7 9 11
 🔑 Clave:
-•	No paras por el valor
-•	Paras por la cantidad*/
-
+•	Usar residuo % 2
+•	Contador solo sube si es impar*/
 
         Scanner sc = new Scanner(System.in);
 
         int entrada;
-        int numeroQuePruebo = 1;
+        int numeroQuePruebo = 0;
         int contador = 0;
 
         System.out.print("Ingresa un número: ");
+
         entrada = sc.nextInt();
 
         while (contador < entrada) {
-            if (numeroQuePruebo % 3 == 0) {
+            if (numeroQuePruebo % 2 != 0) {
                 System.out.println(numeroQuePruebo);
                 contador++;
             }
             numeroQuePruebo++;
         }
 
+        sc.close();
     }
-
 }

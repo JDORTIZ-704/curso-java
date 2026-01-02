@@ -2,16 +2,15 @@ package cursojava.estructurasbasicas.taller.nivel_1;
 
 import java.util.Scanner;
 
-public class Case_6 {
-    public static void main(String[] args) {
+public class Case_9 {
+    public static void main (String[] args) {
 
-/*        3️⃣ Mostrar los primeros N múltiplos de 3
-        Entrada: 4
-        Salida: 3 6 9 12
+/*        7️⃣ Mostrar los primeros N números que NO son múltiplos de 3
+        Entrada: 5
+        Salida: 1 2 4 5 7
 🔑 Clave:
-•	No paras por el valor
-•	Paras por la cantidad*/
-
+•	Condición negativa
+•	Contador solo sube si cumple*/
 
         Scanner sc = new Scanner(System.in);
 
@@ -23,13 +22,15 @@ public class Case_6 {
         entrada = sc.nextInt();
 
         while (contador < entrada) {
-            if (numeroQuePruebo % 3 == 0) {
+            if (numeroQuePruebo % 3 != 0) {
                 System.out.println(numeroQuePruebo);
                 contador++;
             }
             numeroQuePruebo++;
+
         }
 
-    }
+        sc.close();
 
+    }
 }

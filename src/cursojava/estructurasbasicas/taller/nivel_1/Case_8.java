@@ -2,34 +2,36 @@ package cursojava.estructurasbasicas.taller.nivel_1;
 
 import java.util.Scanner;
 
-public class Case_6 {
-    public static void main(String[] args) {
+public class Case_8 {
+    public static void main (String[] args) {
 
-/*        3️⃣ Mostrar los primeros N múltiplos de 3
-        Entrada: 4
-        Salida: 3 6 9 12
+/*
+        6️⃣ Mostrar los primeros N números mayores que 10 y pares
+        Entrada: 3
+        Salida: 12 14 16
 🔑 Clave:
-•	No paras por el valor
-•	Paras por la cantidad*/
-
+•	Dos condiciones al tiempo
+•	Contador manda
+*/
 
         Scanner sc = new Scanner(System.in);
 
         int entrada;
-        int numeroQuePruebo = 1;
         int contador = 0;
+        int numeroQuePruebo = 1;
 
         System.out.print("Ingresa un número: ");
         entrada = sc.nextInt();
 
         while (contador < entrada) {
-            if (numeroQuePruebo % 3 == 0) {
+            if (numeroQuePruebo > 10 && numeroQuePruebo % 2 == 0) {
                 System.out.println(numeroQuePruebo);
                 contador++;
             }
             numeroQuePruebo++;
         }
 
-    }
+        sc.close();
 
+    }
 }
