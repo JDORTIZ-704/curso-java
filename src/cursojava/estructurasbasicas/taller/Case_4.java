@@ -1,6 +1,4 @@
-package cursojava.estructurasbasicas.taller.nivel_1;
-
-import jdk.dynalink.support.SimpleRelinkableCallSite;
+package cursojava.estructurasbasicas.taller;
 
 import java.util.Scanner;
 

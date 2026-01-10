@@ -1,4 +1,4 @@
-package cursojava.estructurasbasicas.taller.nivel_1;
+package cursojava.estructurasbasicas.taller;
 
 import java.util.Scanner;
 

@@ -1,6 +1,5 @@
-package cursojava.estructurasbasicas.taller.nivel_1;
+package cursojava.estructurasbasicas.taller;
 
-import javax.xml.stream.events.EntityReference;
 import java.util.Scanner;
 
 public class Case_7 {
