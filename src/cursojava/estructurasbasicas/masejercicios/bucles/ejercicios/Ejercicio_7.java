@@ -13,7 +13,6 @@ public class Ejercicio_7 {
         int ingresoClave;
         int intentos = 0;
 
-
         do {
             System.out.print("Ingresa la combinación de 4 cifras: ");
             ingresoClave = sc.nextInt();
