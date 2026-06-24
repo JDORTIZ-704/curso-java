@@ -1,4 +1,4 @@
-package cursojava.estructurasbasicas.claude;
+package cursojava.estructurasbasicas.claude.practicas;
 
 public class Practice1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package cursojava.estructurasbasicas.claude;
+package cursojava.estructurasbasicas.claude.practicas;
 
 import java.util.Scanner;
 
