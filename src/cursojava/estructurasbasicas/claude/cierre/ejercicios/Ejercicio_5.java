@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Ejercicio_5 {
     public static void main(String[] args) {
 
+
         Scanner sc = new Scanner(System.in);
 
         double[] list = new double[5];
@@ -54,5 +55,6 @@ public class Ejercicio_5 {
         System.out.println("Nota Min: " + min);
 
         sc.close();
+
     }
 }
