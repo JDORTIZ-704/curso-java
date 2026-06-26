@@ -1,6 +1,5 @@
 package cursojava.estructurasbasicas.claude.cierre.ejercicios;
 
-import java.awt.event.ContainerAdapter;
 import java.util.Scanner;
 
 public class Ejercicio_5 {
