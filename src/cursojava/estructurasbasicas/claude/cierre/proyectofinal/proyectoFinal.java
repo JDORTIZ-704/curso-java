@@ -1,6 +1,5 @@
 package cursojava.estructurasbasicas.claude.cierre.proyectofinal;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class proyectoFinal {
@@ -10,17 +9,16 @@ public class proyectoFinal {
 
         // Arrays (Datos estudiantes)
 
-        double[][] notas = new double[2][3];
-        String[] nombres = new String[2];
-        int[] edad = new int[2];
-        double[] promedio = new double[2];
+        double[][] notas = new double[20][3];
+        String[] nombres = new String[20];
+        int[] edad = new int[20];
+        double[] promedio = new double[20];
 
         // Variables
 
         boolean condicionMenu = false;
         int opcionMenu;
         int contadorEstudiante = 0;
-        double prePromedio = 0;
         String consultaEstudiante;
 
         // Menú
@@ -41,17 +39,21 @@ public class proyectoFinal {
 
             switch (opcionMenu) {
                 case 1:
-                    System.out.print("Ingresa el nombre del estudiante #" + (contadorEstudiante + 1) + ": ");
-                    nombres[contadorEstudiante] = sc.nextLine();
-                    System.out.print("Ingresa la edad del estudiante: ");
-                    edad[contadorEstudiante] = sc.nextInt();
-                    sc.nextLine();
-                    for (int j = 0; j < 3; j++) {
-                        System.out.print("Ingresa la nota #" + (j + 1) + ": ");
-                        notas[contadorEstudiante][j] = sc.nextDouble();
+                    if (contadorEstudiante == 20) {
+                        System.out.println("Máximo de estudiantes alcanzado (20)");
+                    } else {
+                        System.out.print("Ingresa el nombre del estudiante #" + (contadorEstudiante + 1) + ": ");
+                        nombres[contadorEstudiante] = sc.nextLine();
+                        System.out.print("Ingresa la edad del estudiante: ");
+                        edad[contadorEstudiante] = sc.nextInt();
                         sc.nextLine();
+                        for (int j = 0; j < 3; j++) {
+                            System.out.print("Ingresa la nota #" + (j + 1) + ": ");
+                            notas[contadorEstudiante][j] = sc.nextDouble();
+                            sc.nextLine();
+                        }
+                        contadorEstudiante++;
                     }
-                    contadorEstudiante++;
                     break;
                 case 2:
                     if (contadorEstudiante == 0) {
@@ -66,6 +68,7 @@ public class proyectoFinal {
                     }
                     break;
                 case 3:
+                    boolean buscarEstudiante = false;
                     System.out.print("Ingresa el nombre del estudiante a consultar: ");
                     consultaEstudiante = sc.nextLine();
 
@@ -75,12 +78,15 @@ public class proyectoFinal {
                             for (int h = 0; h < 3; h++) {
                                 System.out.println("Nota #" + (h + 1) + ": " + notas[x][h]);
                             }
-                        } else {
-                            System.out.println("Estudiante no encontrado");
+                            buscarEstudiante = true;
                         }
+                    }
+                    if (!buscarEstudiante) {
+                        System.out.println("Estudiante no encontrado");
                     }
                     break;
                 case 4:
+                    double prePromedio = 0;
                     for (int k = 0; k < contadorEstudiante; k++) {
                         double sumaNotas = 0;
                         for (int s = 0; s < 3; s++) {
@@ -92,23 +98,35 @@ public class proyectoFinal {
                     if (contadorEstudiante == 0) {
                         System.out.println("No existen registros");
                     } else {
-                        for (double arrayPromedio : promedio) {
-                            prePromedio += arrayPromedio;
+                        for (int u = 0; u < contadorEstudiante; u++) {
+                            prePromedio += promedio[u];
                         }
                         System.out.println("El promedio general del curso es: " + Math.round(prePromedio / contadorEstudiante * 100.0) / 100.0);
                     }
                     break;
                 case 5:
-                    Arrays.sort(promedio);
-                    System.out.println("Máximo promedio: " + promedio[promedio.length - 1]);
-                    System.out.println("Estudiante: " + nombres[0] + ", edad " + edad[0]);
-                    for (int v = 0; v < 3; v++) {
-                        System.out.println("Nota #" + (v + 1) + ": " + notas[0][v]);
+
+                    int indiceMax = 0;
+                    int indiceMin = 0;
+
+                    for (int p = 0; p < contadorEstudiante; p++) {
+                        if (promedio[p] > promedio[indiceMax]) {
+                            indiceMax = p;
+                        }
+                        if (promedio[p] < promedio[indiceMin]) {
+                            indiceMin = p;
+                        }
                     }
-                    System.out.println("Mínimo promedio: " + promedio[0]);
-                    System.out.println("Estudiante: " + nombres[promedio.length - 1] + ", edad " + edad[promedio.length - 1]);
+
+                    System.out.println("Máximo promedio: " + promedio[indiceMax]);
+                    System.out.println("Estudiante: " + nombres[indiceMax] + ", edad " + edad[indiceMax]);
+                    for (int v = 0; v < 3; v++) {
+                        System.out.println("Nota #" + (v + 1) + ": " + notas[indiceMax][v]);
+                    }
+                    System.out.println("Mínimo promedio: " + promedio[indiceMin]);
+                    System.out.println("Estudiante: " + nombres[indiceMin] + ", edad " + edad[indiceMin]);
                     for (int t = 0; t < 3; t++) {
-                        System.out.println("Nota #" + (t + 1) + ": " + notas[promedio.length - 1][t]);
+                        System.out.println("Nota #" + (t + 1) + ": " + notas[indiceMin][t]);
                     }
                     break;
                 case 6:
