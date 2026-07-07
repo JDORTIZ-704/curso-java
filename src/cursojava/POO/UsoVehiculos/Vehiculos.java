@@ -8,26 +8,54 @@ public class Vehiculos {
     private int ancho;
     private int peso;
 
-    public Vehiculos() {
+    public Vehiculos(int ruedas, String color) {
 
-        ruedas = 4;
-        color = "Sin color";
+        this.ruedas = ruedas;
+        this.color = color;
         largo = 2;
         ancho = 1;
         peso = 2;
 
     }
 
-    public void setColor () {
-        color = "Azul";
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public String getColor(){
+    public String getColor() {
         return color;
     }
 
-    public void MostrarDatos() {
-       System.out.println("Color Vehiculo: " + color);
+    public void setRuedas(int ruedas) {
+        this.ruedas = ruedas;
     }
 
+    public int getRuedas() {
+        return ruedas;
+    }
+
+
+    public int getLargo() {
+        return largo;
+    }
+
+    public void setLargo(int largo) {
+        this.largo = largo;
+    }
+
+    public int getAncho() {
+        return ancho;
+    }
+
+    public void setAncho(int ancho) {
+        this.ancho = ancho;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
 }
