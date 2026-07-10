@@ -1,4 +1,4 @@
-package cursojava.POO.CuentaBancaria;
+package cursojava.POO.EjerciciosIntroduccion.CuentaBancaria;
 
 public class CuentaBancaria {
     private double saldo;

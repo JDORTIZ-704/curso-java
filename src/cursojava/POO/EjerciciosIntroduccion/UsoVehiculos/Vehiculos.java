@@ -1,4 +1,4 @@
-package cursojava.POO.UsoVehiculos;
+package cursojava.POO.EjerciciosIntroduccion.UsoVehiculos;
 
 public class Vehiculos {
 
@@ -7,6 +7,9 @@ public class Vehiculos {
     private int largo;
     private int ancho;
     private int peso;
+    private boolean climatizador;
+    private boolean tapiceria;
+    private boolean gps;
 
     public Vehiculos(int ruedas, String color) {
 
@@ -16,6 +19,22 @@ public class Vehiculos {
         ancho = 1;
         peso = 2;
 
+    }
+
+    public void setExtra(boolean climatizador) {
+        this.climatizador = true;
+    }
+
+    public void setExtra(boolean gps, boolean climatizador, boolean tapiceria) {
+
+    }
+
+    public String getExtra(){
+        if (climatizador) {
+            return "Tienes un extra de climatizador";
+        } else {
+            return "No tienes climatizador";
+        }
     }
 
     public void setColor(String color) {
