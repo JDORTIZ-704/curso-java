@@ -1,50 +1,48 @@
 package cursojava.POO.EjerciciosIntroduccion.EnvioPaquetes;
 
-import java.util.Random;
-
 public class Paquete {
 
     private int documentoRemitente;
     private double peso;
     private int referenciaEnvio;
-    private byte prioridadEnvio;
+    private int prioridadEnvio;
 
-    public Paquete(int documentoRemitente, double peso) {
+    public Paquete(int documentoRemitente, double peso, int referenciaEnvio, int prioridadEnvio) {
         this.documentoRemitente = documentoRemitente;
-        Random rndRefEnvio = new Random();
-        referenciaEnvio = Math.abs(rndRefEnvio.nextInt());
+        this.referenciaEnvio = referenciaEnvio;
         this.peso = peso;
-        prioridadEnvio = 0;
-
+        this.prioridadEnvio = prioridadEnvio;
     }
-
 
     public double getPeso() {
         return peso;
     }
 
     public void setPeso(double peso) {
-        System.out.print("Nuevo peso: ");
-        if (peso < 0) {
-            System.out.println("Por favor ingresar un valor valido.");
-        } else {
-            System.out.println("Peso actualizado!.");
-            this.peso = peso;
-        }
+        this.peso = peso;
     }
 
-    public byte getPrioridadEnvio() {
+    public int getPrioridadEnvio() {
         return prioridadEnvio;
     }
 
-    public void setPrioridadEnvio(byte prioridadEnvio) {
-        System.out.print("Prioridad el envió (0=normal, 1=Alta y 2=Urgente): ");
-        if (prioridadEnvio < 0 || prioridadEnvio > 3) {
-            System.out.println("Por favor ingresar un valor valido.");
-        } else {
-            System.out.println("Prioridad modificada con éxito.");
-            this.prioridadEnvio = prioridadEnvio;
-        }
+    public void setPrioridadEnvio(int prioridadEnvio) {
+        this.prioridadEnvio = prioridadEnvio;
+    }
 
+    public int getReferenciaEnvio() {
+        return referenciaEnvio;
+    }
+
+    public void setReferenciaEnvio(int referenciaEnvio) {
+        this.referenciaEnvio = referenciaEnvio;
+    }
+
+    public int getDocumentoRemitente() {
+        return documentoRemitente;
+    }
+
+    public void setDocumentoRemitente(int documentoRemitente) {
+        this.documentoRemitente = documentoRemitente;
     }
 }

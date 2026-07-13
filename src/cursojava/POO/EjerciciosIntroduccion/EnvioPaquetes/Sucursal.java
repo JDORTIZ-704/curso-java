@@ -1,7 +1,5 @@
 package cursojava.POO.EjerciciosIntroduccion.EnvioPaquetes;
 
-import java.util.Random;
-
 public class Sucursal {
 
     private String direccion;
@@ -14,25 +12,19 @@ public class Sucursal {
         this.direccion = direccion;
     }
 
-    public String getNumeroSucursal() {
-        return "Número de sucursal: " + numeroSucursal;
+    public int getNumeroSucursal() {
+        return numeroSucursal;
     }
 
     public void setNumeroSucursal(int numeroSucursal) {
-        if (numeroSucursal < 0) {
-            System.out.println("Debe ingresar un número de sucursal valido.");
-        } else {
-            System.out.println("Número de sucursal creado correctamente.");
-            this.numeroSucursal = numeroSucursal;
-        }
+        this.numeroSucursal = numeroSucursal;
     }
 
     public String getCiudad() {
-        return "Ciudad: " + ciudad;
+        return ciudad;
     }
 
     public void setCiudad(String ciudad) {
-        System.out.println("Ciudad registrada correctamente.");
         this.ciudad = ciudad;
     }
 
@@ -41,11 +33,22 @@ public class Sucursal {
     }
 
     public void setDireccion(String direccion) {
-        System.out.println("Dirección introducida correctamente.");
         this.direccion = direccion;
     }
 
-    public void setCalcularPrecio() {
+    public double setCalcularPrecio(Paquete p) {
 
+        double precioPaquete;
+
+        precioPaquete = p.getPeso() * 2;
+
+        if (p.getPeso() == 1) {
+            precioPaquete += 10;
+        }
+        if (p.getPeso() == 2) {
+            precioPaquete += 20;
+        }
+
+        return precioPaquete;
     }
 }
