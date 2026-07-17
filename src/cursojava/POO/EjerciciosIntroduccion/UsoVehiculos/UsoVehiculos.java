@@ -3,8 +3,6 @@ package cursojava.POO.EjerciciosIntroduccion.UsoVehiculos;
 public class UsoVehiculos {
     public static void main(String[] args) {
 
-        boolean climatizadorExtra = true;
-
         Vehiculos carro = new Vehiculos(4, "");
 
         carro.setColor("rojo");
@@ -15,11 +13,23 @@ public class UsoVehiculos {
         carro2.setColor("amarillo");
         System.out.println(carro2.getColor());
 
-        carro2.setExtra(climatizadorExtra);
+        carro2.setExtra(true);
         System.out.println(carro2.getExtra());
 
+        Vehiculos miMoto = new Vehiculos(2,1,0.3,200);
 
-        Vehiculos moto1 = new Vehiculos(2, "");
+        miMoto.setColor("Gris");
+
+        System.out.println(miMoto.getPeso());
+
+        Vehiculos miCamion = new Vehiculos(6,3,1.5,3500);
+
+        miCamion.setColor("Azul");
+
+        miCamion.setExtra(true,true,true);
+
+        System.out.println(miCamion.getExtra());
+
 
 
 

@@ -5,35 +5,44 @@ public class Vehiculos {
     private int ruedas;
     private String color;
     private int largo;
-    private int ancho;
+    private double ancho;
     private int peso;
     private boolean climatizador;
     private boolean tapiceria;
     private boolean gps;
 
     public Vehiculos(int ruedas, String color) {
-
         this.ruedas = ruedas;
         this.color = color;
         largo = 2;
         ancho = 1;
         peso = 2;
+    }
 
+    public Vehiculos(int ruedas, int largo, double ancho, int peso) {
+        this.ruedas = ruedas;
+        this.largo = largo;
+        this.ancho = ancho;
+        this.peso = peso;
     }
 
     public void setExtra(boolean climatizador) {
-        this.climatizador = true;
+        this.climatizador = climatizador;
     }
 
     public void setExtra(boolean gps, boolean climatizador, boolean tapiceria) {
-
+        this.gps = gps;
+        this.tapiceria = tapiceria;
+        this.climatizador = climatizador;
     }
 
     public String getExtra(){
-        if (climatizador) {
-            return "Tienes un extra de climatizador";
+        if (climatizador && !gps && !tapiceria) {
+            return "Llevas el pack 1 de extra";
+        } else if (climatizador & gps && tapiceria) {
+            return "Llevas el pack 2 de extra";
         } else {
-            return "No tienes climatizador";
+            return "No se admiten otras combinaciones";
         }
     }
 
@@ -53,7 +62,6 @@ public class Vehiculos {
         return ruedas;
     }
 
-
     public int getLargo() {
         return largo;
     }
@@ -62,7 +70,7 @@ public class Vehiculos {
         this.largo = largo;
     }
 
-    public int getAncho() {
+    public double getAncho() {
         return ancho;
     }
 
